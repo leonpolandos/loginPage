@@ -1,8 +1,9 @@
 import React from 'react'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'; 
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'; 
 import Login from '../../Components/Pages/Login/Index';
 import Dashboard from '../../Components/Pages/Dashboard/index';
 import About from '../../Components/Pages/About/index';
+import Insert from '../../Components/Pages/Insert/index';
 
 const index = () => {
     return (
@@ -16,6 +17,9 @@ const index = () => {
                 </Route>
                 <Route path="/about">
                     <About/>
+                </Route>
+                <Route path="/insert">
+                    <Insert />
                 </Route>
             </Switch>
         </Router>

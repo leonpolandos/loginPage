@@ -1,9 +1,11 @@
 import React from 'react'
+import NavBar from '../../molecules/NavBar'
 
 const index = () => {
     return (
-        <div>
-            <h3>About</h3>
+        <div className="container mt-5">
+            <NavBar />
+            
         </div>
     )
 }

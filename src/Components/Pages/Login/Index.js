@@ -36,9 +36,10 @@ export default Login;
 */
 
 import React, { useState, useEffect } from "react";
+import NavBar from "../../molecules/NavBar";
 
 const Login = ({ title, angka }) => {
-  const [welcomeText, setWelcomeText] = useState("Welcome!!!");
+  const [welcomeText, setWelcomeText] = useState();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -62,6 +63,7 @@ const Login = ({ title, angka }) => {
   return (
     //JSX
     <div className="container mt-5">
+      <NavBar />
       <h3>{welcomeText}</h3>
       <h5>
         {title} {angka}
