@@ -37,11 +37,15 @@ export default Login;
 
 import React, { useState, useEffect } from "react";
 import NavBar from "../../molecules/NavBar";
+import firebase from '../../../Config/Firabase/index';
+import { useHistory } from 'react-router-dom';
 
 const Login = ({ title, angka }) => {
   const [welcomeText, setWelcomeText] = useState();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  let history = useHistory();
 
   useEffect(() => {
     console.log("component did mount");
@@ -52,12 +56,13 @@ const Login = ({ title, angka }) => {
   }, [welcomeText, email, password]);
 
   const handleSubmit = () => {
-    setWelcomeText("Selamat Datang");
-    const data = {
-      email: email,
-      password: password,
-    };
-    console.log(data);
+    firebase
+    .auth()
+    .signInWithEmailAndPassword(email, password)
+    .then((res) => history.push('/'))
+    .catch(error => console.log("error", error))
+  
+    //console.log(data);
   };
 
   return (

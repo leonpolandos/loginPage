@@ -4,6 +4,7 @@ import Login from '../../Components/Pages/Login/Index';
 import Dashboard from '../../Components/Pages/Dashboard/index';
 import About from '../../Components/Pages/About/index';
 import Insert from '../../Components/Pages/Insert/index';
+import Register from '../../Components/Pages/Register';
 
 const index = () => {
     return (
@@ -20,6 +21,9 @@ const index = () => {
                 </Route>
                 <Route path="/insert">
                     <Insert />
+                </Route>
+                <Route path="/register">
+                    <Register/>
                 </Route>
             </Switch>
         </Router>
